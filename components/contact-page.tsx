@@ -23,7 +23,7 @@ import { Footer } from "@/components/footer"
 
 const contactInfoItems = [
   { icon: Phone, labelKey: "phone" as const, value: "+1 (514) 415-4612", href: "tel:+15144154612" },
-  { icon: Mail, labelKey: "email" as const, value: "info@magicmotostar.ca", href: "mailto:info@magicmotostar.ca" },
+  { icon: Mail, labelKey: "email" as const, value: "info@magicmoto.ca", href: "mailto:info@magicmoto.ca" },
   { icon: MapPin, labelKey: "address" as const, value: "Gherla, Romania", href: "https://maps.google.com" },
 ]
 
