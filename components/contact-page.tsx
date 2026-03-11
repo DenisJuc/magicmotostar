@@ -69,22 +69,41 @@ export function ContactPage() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const formData = new FormData()
+    formData.append("name", formState.name)
+    formData.append("email", formState.email)
+    formData.append("phone", formState.phone)
+    formData.append("message", formState.message)
+    formData.append("_replyto", formState.email)
+    formData.append("_subject", `New inquiry from ${formState.name} — Magic Moto Star`)
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    try {
+      const res = await fetch("https://formspree.io/f/xaqpoaqq", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      })
 
-    // Reset after showing success
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormState({ name: "", email: "", phone: "", message: "" })
-    }, 3000)
+      if (res.ok) {
+        setIsSubmitting(false)
+        setIsSubmitted(true)
+        setFormState({ name: "", email: "", phone: "", message: "" })
+        setError(null)
+      } else {
+        setIsSubmitting(false)
+        setError("Something went wrong. Please try again.")
+      }
+    } catch {
+      setIsSubmitting(false)
+      setError("Something went wrong. Please try again.")
+    }
   }
 
   const handleChange = (
@@ -149,8 +168,7 @@ export function ContactPage() {
                       <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
                         <CheckCircle2 className="h-10 w-10 text-primary" />
                       </div>
-                      <h3 className="text-xl font-bold mb-2">{t("messageSent")}</h3>
-                      <p className="text-muted-foreground">{t("messageSentSubtext")}</p>
+                      <h3 className="text-xl font-bold">Message sent! We&apos;ll get back to you soon.</h3>
                     </motion.div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -208,6 +226,12 @@ export function ContactPage() {
                           className="bg-input border-border resize-none"
                         />
                       </div>
+
+                      {error && (
+                        <p className="text-destructive text-sm font-medium" role="alert">
+                          {error}
+                        </p>
+                      )}
 
                       <Button
                         type="submit"
