@@ -120,7 +120,10 @@
     "statsPassionDriven": "Passion Driven",
     "statsFatherSon": "Father & Son Business",
     "statsBasedGherla": "Based in Gherla",
-    "statsOurFoundation": "Our Foundation"
+    "statsOurFoundation": "Our Foundation",
+    "statsFamily": "Family",
+    "statsRomania": "Romania",
+    "statsTrust": "Trust"
   },
   "contact": {
     "getInTouch": "Get In Touch",

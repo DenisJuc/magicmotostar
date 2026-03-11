@@ -102,9 +102,9 @@
     "aboutTitle": "Despre Magic Moto Star",
     "aboutSubtext": "Unde pasiunea întâlnește profesionalismul. Descoperă povestea noastră.",
     "ourMission": "Misiunea noastră",
-    "builtForRiders1": "Făcut de iubitori de motociclete,",
-    "builtForRiders2": "pentru cei care apreciază motocicletele.",
-    "missionDescription": "Numele meu este Denis Jucan. și împreună cu tatăl meu, suntem membri fondatori ai Magic Moto Star. Ceea ce a început ca o simplă pasiune—achiziționarea primei noastre motociclete—a evoluat într-o afacere bazată pe dedicare, încredere și muncă asiduă. Această companie a fost construită de la început, cu o viziune clară și un angajament de neclintit. Astăzi, sunt mândru să continui acea viziune și să vă pun la dispoziție acest site web, cu intenția de a împărtăși povestea și valorile noastre cu tine. Afacerea noastră este ghidată de măiestrie, angajament și o pasiune autentică pentru ceea ce facem. Credem în a-ți oferi doar ce este mai bun—pentru că nu meriți nimic mai puțin. Hai să găsim împreună exact ce cauți, ca și tu să-ți urmărești pasiunea!",
+    "builtForRiders1": "Creat de pasionați,",
+    "builtForRiders2": "pentru pasionați.",
+    "missionDescription": "Mă numesc Denis Jucan și, împreună cu tatăl meu, suntem fondatorii Magic Moto Star. Totul a început dintr-o simplă pasiune — prima noastră motocicletă — și a crescut într-o afacere construită pe dedicare, încredere și muncă asiduă. De la zero, am pus bazele unei companii cu o viziune clară și un angajament de neclintit. Astăzi, sunt mândru să duc mai departe această viziune și să vă prezint acest site, creat cu dorința de a vă aduce mai aproape de pasiunea noastră. Ne ghidăm după măiestrie, seriozitate și o dragoste autentică pentru ceea ce facem. Credem că meriți doar ce e mai bun — și asta ne propunem să-ți oferim. Hai să găsim împreună motocicleta potrivită pentru tine!",
     "letsConnect": "Hai să discutăm",
     "readyToExperience": "Gata să simți",
     "theDifference": "diferența?",
@@ -118,9 +118,12 @@
     "statsCustomerSatisfaction": "Satisfacție clienți",
     "statsSupportAvailable": "Suport disponibil",
     "statsPassionDriven": "Conduși de pasiune",
-    "statsFatherSon": "Familie",
-    "statsBasedGherla": "România",
-    "statsOurFoundation": "Încredere"
+    "statsFatherSon": "Afacere tată și fiu",
+    "statsBasedGherla": "Bazați în Gherla",
+    "statsOurFoundation": "Fundația noastră",
+    "statsFamily": "Familie",
+    "statsRomania": "România",
+    "statsTrust": "Încredere"
   },
   "contact": {
     "getInTouch": "Contactați-ne",

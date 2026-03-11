@@ -12,9 +12,9 @@ export function AboutPage() {
   const t = useTranslations("about")
   const stats = [
     { value: "100%", label: t("statsPassionDriven") },
-    { value: "Family", label: t("statsFatherSon") },
-    { value: "Romania", label: t("statsBasedGherla") },
-    { value: "Trust", label: t("statsOurFoundation") },
+    { value: t("statsFamily"), label: t("statsFatherSon") },
+    { value: t("statsRomania"), label: t("statsBasedGherla") },
+    { value: t("statsTrust"), label: t("statsOurFoundation") },
   ]
   return (
     <div className="min-h-screen bg-background">
