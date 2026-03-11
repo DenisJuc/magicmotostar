@@ -10,6 +10,7 @@ import {
   MapPin,
   MessageCircle,
   Facebook,
+  Instagram,
   Send,
   CheckCircle2,
 } from "lucide-react"
@@ -31,6 +32,11 @@ const socialLinks = [
     icon: Facebook,
     href: "https://www.facebook.com/profile.php?id=61574938995012",
     label: "Facebook",
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/magicmotogroup/",
+    label: "Instagram",
   },
   {
     icon: TikTokIcon,

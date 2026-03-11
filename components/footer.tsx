@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Facebook } from "lucide-react"
+import { Facebook, Instagram } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { Link as I18nLink } from "@/i18n/navigation"
 
@@ -38,6 +38,11 @@ const socialLinks = [
     icon: Facebook,
     href: "https://www.facebook.com/profile.php?id=61574938995012",
     label: "Facebook",
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/magicmotogroup/",
+    label: "Instagram",
   },
   {
     icon: TikTokIcon,
