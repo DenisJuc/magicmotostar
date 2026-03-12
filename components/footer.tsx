@@ -76,11 +76,12 @@ export function Footer() {
           <div className="lg:col-span-2">
             <I18nLink href="/" className="inline-flex items-center gap-2 mb-6">
               <Image
-              src="/logo.png"
+              src="/logo_black.png"
               alt="Magic Moto Star"
-              width={120}
-              height={40}
+              width={716}
+              height={716}
               className="h-10 w-auto"
+              style={{ objectFit: "contain" }}
             />
               <span className="text-xl font-bold tracking-tight font-[family-name:var(--font-oswald)] uppercase">
                 Magic Moto Star

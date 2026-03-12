@@ -58,11 +58,12 @@ export function Navbar() {
                 className="flex items-center gap-2"
               >
                 <Image
-                  src="/logo.png"
+                  src="/logo_black.png"
                   alt="Magic Moto Star"
-                  width={120}
-                  height={40}
+                  width={716}
+                  height={716}
                   className="h-10 w-auto"
+                  style={{ objectFit: "contain" }}
                   priority
                 />
                 <span className="text-xl font-bold tracking-tight font-[family-name:var(--font-oswald)] uppercase">
