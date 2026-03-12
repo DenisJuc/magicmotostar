@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Facebook, Instagram } from "lucide-react"
 import { useTranslations } from "next-intl"
@@ -74,7 +75,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-2">
             <I18nLink href="/" className="inline-flex items-center gap-2 mb-6">
-              <img src="/logo.png" alt="Magic Moto Star" className="h-10 w-auto" />
+              <Image
+              src="/logo.png"
+              alt="Magic Moto Star"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+            />
               <span className="text-xl font-bold tracking-tight font-[family-name:var(--font-oswald)] uppercase">
                 Magic Moto Star
               </span>

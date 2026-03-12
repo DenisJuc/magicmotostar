@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -56,10 +57,13 @@ export function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 className="flex items-center gap-2"
               >
-                <img
+                <Image
                   src="/logo.png"
                   alt="Magic Moto Star"
+                  width={120}
+                  height={40}
                   className="h-10 w-auto"
+                  priority
                 />
                 <span className="text-xl font-bold tracking-tight font-[family-name:var(--font-oswald)] uppercase">
                   Magic Moto Star
