@@ -16,7 +16,6 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: 'Magic Moto Star | Trust Your Ride',
   description: 'Premium motorcycle dealership in Canada. Browse our curated selection of quality motorcycles. Trust your ride with Magic Moto Star.',
-  generator: 'v0.app',
   keywords: [
     'motorcycles',
     'motorcycle dealer',
