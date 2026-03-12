@@ -23,7 +23,16 @@ import { useTranslations } from "next-intl"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { BikeCard } from "@/components/bike-card"
-import { motorcycles, brands, conditions, engineSizes, statuses } from "@/lib/motorcycles"
+import {
+  motorcycles,
+  brands,
+  conditions,
+  engineSizes,
+  statuses,
+  years,
+  priceRangeValues,
+  kmRangeValues,
+} from "@/lib/motorcycles"
 
 interface Filters {
   priceRange: string
@@ -45,23 +54,29 @@ const defaultFilters: Filters = {
   status: "all",
 }
 
+const PRICE_RANGE_LABEL_KEYS: Record<string, string> = {
+  "0-6000": "under6k",
+  "6000-8000": "price6to8",
+  "8000-10000": "price8to10",
+  "10000+": "price10plus",
+}
+const KM_RANGE_LABEL_KEYS: Record<string, string> = {
+  "0-20000": "under20kKm",
+  "20000-35000": "km20to35",
+  "35000-50000": "km35to50",
+  "50000+": "km50plus",
+}
+
 function filterOptionArrays(t: (k: string) => string) {
-  const yearsInInventory = [...new Set(motorcycles.map((b) => b.year))].sort((a, b) => b - a)
-  const yearOptions = yearsInInventory.map((y) => ({ value: String(y), label: String(y) }))
+  const yearOptions = years.map((y) => ({ value: String(y), label: String(y) }))
   return {
     priceRanges: [
       { value: "all", label: t("allPrices") },
-      { value: "0-6000", label: t("under6k") },
-      { value: "6000-8000", label: t("price6to8") },
-      { value: "8000-10000", label: t("price8to10") },
-      { value: "10000+", label: t("price10plus") },
+      ...priceRangeValues.map((v) => ({ value: v, label: t(PRICE_RANGE_LABEL_KEYS[v] ?? v) })),
     ],
     kmRanges: [
       { value: "all", label: t("allMileage") },
-      { value: "0-20000", label: t("under20kKm") },
-      { value: "20000-35000", label: t("km20to35") },
-      { value: "35000-50000", label: t("km35to50") },
-      { value: "50000+", label: t("km50plus") },
+      ...kmRangeValues.map((v) => ({ value: v, label: t(KM_RANGE_LABEL_KEYS[v] ?? v) })),
     ],
     yearRanges: [
       { value: "all", label: t("allYears") },

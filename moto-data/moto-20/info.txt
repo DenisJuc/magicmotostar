@@ -1,0 +1,5 @@
+Title: Suzuki Boulevard M90 
+Year : 2013
+CC: 1500
+KM: 20433
+Price: 7250

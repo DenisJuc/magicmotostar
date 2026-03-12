@@ -1,0 +1,5 @@
+Title: Custom Kawasaki Vulcan 
+Year : 2012
+CC: 900
+KM: 21326
+Price: 5850

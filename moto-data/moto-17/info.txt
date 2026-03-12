@@ -1,0 +1,5 @@
+Title: Kawasaki Vaquero Superb 
+Year : 2018
+CC: 1700
+KM: 18000
+Price: 10950

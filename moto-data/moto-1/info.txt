@@ -1,0 +1,5 @@
+Title: Suzuki Boulevard M109R
+Year : 2019
+CC: 1800
+KM: 37441
+Price: 8950

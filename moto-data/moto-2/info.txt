@@ -1,0 +1,5 @@
+Title: Yamaha Stratoliner
+Year : 2012
+CC: 1900
+KM: 29412
+Price: 9700

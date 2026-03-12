@@ -1,0 +1,5 @@
+Title: Yamaha Stryker 1300
+Year : 2012
+CC: 1300
+KM: 16000
+Price: 8850

@@ -1,0 +1,5 @@
+Title: Kawasaki Nomad VN17
+Year : 2014
+CC: 1700
+KM: 26242
+Price: 8450

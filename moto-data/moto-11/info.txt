@@ -1,0 +1,5 @@
+Title: Honda VT Satelite
+Year : 2010
+CC: 1300
+KM: 27800
+Price: 6150

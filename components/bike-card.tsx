@@ -1,5 +1,6 @@
 "use client"
 
+import { useRef, useLayoutEffect, useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Gauge, Calendar } from "lucide-react"
@@ -15,20 +16,27 @@ interface BikeCardProps {
 
 export function BikeCard({ bike, index = 0 }: BikeCardProps) {
   const t = useTranslations("motorcycles")
-  const conditionColors = {
+  const ref = useRef<HTMLDivElement>(null)
+  const [showInstantly, setShowInstantly] = useState(false)
+
+  useLayoutEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    if (rect.bottom < 0) {
+      setShowInstantly(true)
+    }
+  }, [])
+
+  const conditionColors: Record<string, string> = {
     New: "bg-primary/20 text-primary border-primary/30",
     Used: "bg-secondary/20 text-secondary border-secondary/30",
+    "Like New": "bg-primary/20 text-primary border-primary/30",
     "Certified Pre-Owned": "bg-primary/20 text-primary border-primary/30",
   }
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group"
-    >
+  const cardContent = (
+    <>
       <Link
         href={`/motorcycles/${bike.slug}`}
         className="block bg-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
@@ -83,6 +91,27 @@ export function BikeCard({ bike, index = 0 }: BikeCardProps) {
           </div>
         </div>
       </Link>
+    </>
+  )
+
+  if (showInstantly) {
+    return (
+      <div ref={ref} className="group">
+        {cardContent}
+      </div>
+    )
+  }
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0.3, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0 }}
+      transition={{ duration: 0.25 }}
+      className="group"
+    >
+      {cardContent}
     </motion.div>
   )
 }

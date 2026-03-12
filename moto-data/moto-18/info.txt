@@ -1,0 +1,5 @@
+Title: Suzuki Boulevard C109T
+Year : 2008
+CC: 1800
+KM: 45089
+Price: 7350

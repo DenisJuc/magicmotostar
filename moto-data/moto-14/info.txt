@@ -1,0 +1,5 @@
+Title: Custom Kawasaki Vulcan 
+Year : 2010
+CC: 900
+KM: 27215
+Price: 5500

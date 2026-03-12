@@ -1,0 +1,5 @@
+Title: Suzuki Boulevard C90T
+Year : 2013
+CC: 1500
+KM: 17856
+Price: 7250

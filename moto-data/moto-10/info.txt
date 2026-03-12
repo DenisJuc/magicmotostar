@@ -1,0 +1,5 @@
+Title: Suzuki Boulevard M50
+Year : 2013
+CC: 800
+KM: 21203
+Price:5550

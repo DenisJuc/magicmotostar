@@ -1,0 +1,5 @@
+Title: Suzuki Boulevard M109R
+Year : 2009
+CC: 1800
+KM: 26958
+Price: 8450

@@ -1,0 +1,5 @@
+Title: Suzuki Boulevard M50
+Year : 2016
+CC: 800
+KM: 26536
+Price: 6950
