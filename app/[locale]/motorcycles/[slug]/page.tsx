@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (!bike) return {}
 
   return {
-    title: `${bike.year} ${bike.make} ${bike.model} | Magic Moto Star`,
+    title: `${bike.year} ${bike.make} ${bike.model} | Magic Moto`,
     description: `View details, photos, and specs for the ${bike.year} ${bike.make} ${bike.model}.`,
   }
 }

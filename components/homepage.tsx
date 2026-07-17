@@ -23,7 +23,7 @@ const HERO_INTERVAL_MS = 4000
 
 export function Homepage() {
   const t = useTranslations("home")
-  const featuredBikes = motorcycles.slice(0, 3)
+  const featuredBikes = motorcycles.filter((m) => m.status === "In Stock").slice(0, 3)
   const [heroIndex, setHeroIndex] = useState(0)
 
   useEffect(() => {

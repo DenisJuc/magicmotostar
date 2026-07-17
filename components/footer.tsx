@@ -77,14 +77,14 @@ export function Footer() {
             <I18nLink href="/" className="inline-flex items-center gap-2 mb-6">
               <Image
               src="/logo_black.png"
-              alt="Magic Moto Star"
+              alt="Magic Moto"
               width={716}
               height={716}
               className="h-10 w-auto"
               style={{ objectFit: "contain" }}
             />
               <span className="text-xl font-bold tracking-tight font-[family-name:var(--font-oswald)] uppercase">
-                Magic Moto Star
+                Magic Moto
               </span>
             </I18nLink>
             <p className="text-sm text-muted-foreground italic">
@@ -115,7 +115,7 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Magic Moto Star. {t("rights")}
+            &copy; {new Date().getFullYear()} Magic Moto. {t("rights")}
           </p>
 
           <div className="flex items-center gap-4">

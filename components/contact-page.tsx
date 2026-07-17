@@ -82,7 +82,7 @@ export function ContactPage() {
     formData.append("phone", formState.phone)
     formData.append("message", formState.message)
     formData.append("_replyto", formState.email)
-    formData.append("_subject", `New inquiry from ${formState.name} — Magic Moto Star`)
+    formData.append("_subject", `New inquiry from ${formState.name} — Magic Moto`)
 
     try {
       const res = await fetch("https://formspree.io/f/xaqpoaqq", {
@@ -120,7 +120,7 @@ export function ContactPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-12 bg-card border-b border-border">
+      <section className="pt-40 pb-12 bg-card border-b border-border">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -375,7 +375,7 @@ export function ContactPage() {
                     {t("founderOwner")}
                   </p>
                   <p className="text-primary text-xs tracking-wider uppercase mt-0.5">
-                    Magic Moto Star
+                    Magic Moto
                   </p>
                 </div>
               </div>

@@ -7,13 +7,16 @@
     "getInTouch": "Get In Touch",
     "toggleMenu": "Toggle menu"
   },
+  "announcement": {
+    "text": "Magic Moto’s 5-year anniversary — €500 off every motorcycle, through August 2, 2026."
+  },
   "footer": {
     "tagline": "Trust your ride",
     "navigation": "Navigation",
     "rights": "All rights reserved."
   },
   "home": {
-    "welcome": "Welcome to Magic Moto Star",
+    "welcome": "Welcome to Magic Moto",
     "feature1Title": "Trusted Quality",
     "feature1Desc": "Every bike we sell is personally inspected and verified by our team",
     "feature2Title": "Family Business",
@@ -30,7 +33,7 @@
     "viewAllMotorcycles": "View All Motorcycles",
     "theMagicDifference": "The Magic Difference",
     "whyChooseUs": "Why Choose Us",
-    "whyChooseSubtext": "At Magic Moto Star, we're not just selling motorcycles. We're building relationships with riders who share our passion.",
+    "whyChooseSubtext": "At Magic Moto, we're not just selling motorcycles. We're building relationships with riders who share our passion.",
     "readyToFind": "Ready to Find Your",
     "perfectRide": "Perfect Ride?",
     "ctaSubtext": "Contact our team today and let us help you discover the motorcycle that matches your style and riding needs.",
@@ -99,7 +102,7 @@
   },
   "about": {
     "ourStory": "Our Story",
-    "aboutTitle": "About Magic Moto Star",
+    "aboutTitle": "About Magic Moto",
     "aboutSubtext": "Where passion meets professionalism. Discover the story behind Canada's trusted motorcycle destination.",
     "ourMission": "Our Mission",
     "builtForRiders1": "Built by Riders,",
@@ -108,11 +111,11 @@
     "letsConnect": "Let's Connect",
     "readyToExperience": "Ready to Experience",
     "theDifference": "The Difference?",
-    "ctaText": "Whether you're buying your first bike or adding to your collection, we're here to help. Reach out today and experience the Magic Moto Star difference for yourself.",
+    "ctaText": "Whether you're buying your first bike or adding to your collection, we're here to help. Reach out today and experience the Magic Moto difference for yourself.",
     "contactUs": "Contact Us",
     "browseInventory": "Browse Inventory",
-    "showroomAlt": "Magic Moto Star showroom",
-    "denisAlt": "Denis Jucan, Magic Moto Star",
+    "showroomAlt": "Magic Moto showroom",
+    "denisAlt": "Denis Jucan, Magic Moto",
     "statsMotorcyclesSold": "Motorcycles Sold",
     "statsYearsExperience": "Years Experience",
     "statsCustomerSatisfaction": "Customer Satisfaction",
@@ -148,7 +151,7 @@
     "messageOnWhatsApp": "Message on WhatsApp",
     "businessInfo": "Business Info",
     "founderOwner": "Founder & Owner",
-    "founderAlt": "Magic Moto Star founder",
+    "founderAlt": "Magic Moto founder",
     "founderQuote": "Every customer who walks through our door is family. We don't just sell motorcycles — we make sure you leave with the right one."
   }
 }

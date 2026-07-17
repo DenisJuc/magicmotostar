@@ -7,13 +7,16 @@
     "getInTouch": "Contactați-ne",
     "toggleMenu": "Deschide meniul"
   },
+  "announcement": {
+    "text": "Aniversare 5 ani Magic Moto — 500 € reducere la fiecare motocicletă, până pe 2 august 2026 inclusiv."
+  },
   "footer": {
     "tagline": "Trust Your Ride",
     "navigation": "Navigare",
     "rights": "Toate drepturile rezervate."
   },
   "home": {
-    "welcome": "Bine ai venit la Magic Moto Star",
+    "welcome": "Bine ai venit la Magic Moto",
     "feature1Title": "Calitate de încredere",
     "feature1Desc": "Fiecare motocicletă pe care o vindem este verificată personal de echipa noastră",
     "feature2Title": "Afacere de familie",
@@ -30,7 +33,7 @@
     "viewAllMotorcycles": "Toate motocicletele",
     "theMagicDifference": "Diferența Magic",
     "whyChooseUs": "De ce noi",
-    "whyChooseSubtext": "La Magic Moto Star nu vindem doar motociclete. Construim relații cu motocicliști care împărtășesc pasiunea noastră.",
+    "whyChooseSubtext": "La Magic Moto nu vindem doar motociclete. Construim relații cu motocicliști care împărtășesc pasiunea noastră.",
     "readyToFind": "Gata să-ți găsești",
     "perfectRide": "motocicleta magică?",
     "ctaSubtext": "Contactează echipa noastră, și vei pleca cu motocicleta potrivită stilului și nevoilor tale.",
@@ -99,20 +102,20 @@
   },
   "about": {
     "ourStory": "Povestea noastră",
-    "aboutTitle": "Despre Magic Moto Star",
+    "aboutTitle": "Despre Magic Moto",
     "aboutSubtext": "Unde pasiunea întâlnește profesionalismul. Descoperă povestea noastră.",
     "ourMission": "Misiunea noastră",
     "builtForRiders1": "Creat de pasionați,",
     "builtForRiders2": "pentru pasionați.",
-    "missionDescription": "Mă numesc Denis Jucan și, împreună cu tatăl meu, suntem fondatorii Magic Moto Star. Totul a început dintr-o simplă pasiune — prima noastră motocicletă — și a crescut într-o afacere construită pe dedicare, încredere și muncă asiduă. De la zero, am pus bazele unei companii cu o viziune clară și un angajament de neclintit. Astăzi, sunt mândru să duc mai departe această viziune și să vă prezint acest site, creat cu dorința de a vă aduce mai aproape de pasiunea noastră. Ne ghidăm după măiestrie, seriozitate și o dragoste autentică pentru ceea ce facem. Credem că meriți doar ce e mai bun — și asta ne propunem să-ți oferim. Hai să găsim împreună motocicleta potrivită pentru tine!",
+    "missionDescription": "Mă numesc Denis Jucan și, împreună cu tatăl meu, suntem fondatorii Magic Moto. Totul a început dintr-o simplă pasiune — prima noastră motocicletă — și a crescut într-o afacere construită pe dedicare, încredere și muncă asiduă. De la zero, am pus bazele unei companii cu o viziune clară și un angajament de neclintit. Astăzi, sunt mândru să duc mai departe această viziune și să vă prezint acest site, creat cu dorința de a vă aduce mai aproape de pasiunea noastră. Ne ghidăm după măiestrie, seriozitate și o dragoste autentică pentru ceea ce facem. Credem că meriți doar ce e mai bun — și asta ne propunem să-ți oferim. Hai să găsim împreună motocicleta potrivită pentru tine!",
     "letsConnect": "Hai să discutăm",
     "readyToExperience": "Gata să simți",
     "theDifference": "diferența?",
-    "ctaText": "Fie că îți cumperi prima motocicletă sau adaugi la colecție, suntem aici. Contactează-ne și trăiește diferența Magic Moto Star.",
+    "ctaText": "Fie că îți cumperi prima motocicletă sau adaugi la colecție, suntem aici. Contactează-ne și trăiește diferența Magic Moto.",
     "contactUs": "Contact",
     "browseInventory": "Vezi stocul",
-    "showroomAlt": "Showroom Magic Moto Star",
-    "denisAlt": "Denis Jucan, Magic Moto Star",
+    "showroomAlt": "Showroom Magic Moto",
+    "denisAlt": "Denis Jucan, Magic Moto",
     "statsMotorcyclesSold": "Motociclete vândute",
     "statsYearsExperience": "Ani experiență",
     "statsCustomerSatisfaction": "Satisfacție clienți",
@@ -148,7 +151,7 @@
     "messageOnWhatsApp": "Mesaj pe WhatsApp",
     "businessInfo": "Informații",
     "founderOwner": "Fondator și proprietar",
-    "founderAlt": "Fondator Magic Moto Star",
+    "founderAlt": "Fondator Magic Moto",
     "founderQuote": "Fiecare client care intră pe ușă e familie. Nu vindem doar motociclete — ne asigurăm că plecați cu cea potrivită."
   }
 }

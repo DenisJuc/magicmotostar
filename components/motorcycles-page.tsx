@@ -51,7 +51,7 @@ const defaultFilters: Filters = {
   brand: "all",
   condition: "all",
   engineSize: "all",
-  status: "all",
+  status: "In Stock",
 }
 
 const PRICE_RANGE_LABEL_KEYS: Record<string, string> = {
@@ -255,7 +255,10 @@ export function MotorcyclesPage() {
   )
 
   const activeFiltersCount = useMemo(() => {
-    return Object.values(filters).filter((v) => v !== "all").length
+    return Object.entries(filters).filter(([key, value]) => {
+      if (key === "status") return value !== "all" && value !== defaultFilters.status
+      return value !== "all"
+    }).length
   }, [filters])
 
   const filteredBikes = useMemo(() => {
@@ -323,7 +326,7 @@ export function MotorcyclesPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-12 bg-card border-b border-border">
+      <section className="pt-40 pb-12 bg-card border-b border-border">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

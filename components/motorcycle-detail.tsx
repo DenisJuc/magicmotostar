@@ -58,7 +58,7 @@ export function MotorcycleDetail({ bike }: { bike: Motorcycle }) {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 lg:px-8 pt-28 pb-16">
+      <div className="container mx-auto px-4 lg:px-8 pt-36 pb-16">
         <div className="mb-8">
             <Button asChild variant="ghost" className="-ml-3 text-muted-foreground hover:text-foreground">
             <Link href="/motorcycles" className="flex items-center gap-2">

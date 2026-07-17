@@ -19,16 +19,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
   const lang = locale === "ro" ? "ro" : "en"
   return {
-    title: "Magic Moto Star | Trust Your Ride",
+    title: "Magic Moto | Trust Your Ride",
     description:
       locale === "ro"
         ? "Dealer motociclete premium. Vezi selecția noastră. Încrede-te în mers."
-        : "Premium motorcycle dealership. Browse our curated selection. Trust your ride with Magic Moto Star.",
+        : "Premium motorcycle dealership. Browse our curated selection. Trust your ride with Magic Moto.",
     keywords: [
       "motorcycles",
       "motorcycle dealer",
       "used motorcycles",
-      "Magic Moto Star",
+      "Magic Moto",
     ],
   }
 }

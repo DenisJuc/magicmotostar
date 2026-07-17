@@ -14,14 +14,14 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: 'Magic Moto Star | Trust Your Ride',
-  description: 'Premium motorcycle dealership in Canada. Browse our curated selection of quality motorcycles. Trust your ride with Magic Moto Star.',
+  title: 'Magic Moto | Trust Your Ride',
+  description: 'Premium motorcycle dealership in Canada. Browse our curated selection of quality motorcycles. Trust your ride with Magic Moto.',
   keywords: [
     'motorcycles',
     'motorcycle dealer',
     'used motorcycles',
     'Canada',
-    'Magic Moto Star',
+    'Magic Moto',
   ],
   icons: {
     icon: '/logo_black.png',
