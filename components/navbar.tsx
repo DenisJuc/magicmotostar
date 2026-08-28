@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
 import { Link, usePathname } from "@/i18n/navigation"
-import { isAnnouncementActive } from "@/lib/announcement"
 
 const LOCALE_STORAGE_KEY = "locale"
 
@@ -28,12 +27,10 @@ function persistLocale(locale: string) {
 
 export function Navbar() {
   const t = useTranslations("nav")
-  const tAnnouncement = useTranslations("announcement")
   const locale = useLocale()
   const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const showAnnouncement = isAnnouncementActive()
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
@@ -53,13 +50,6 @@ export function Navbar() {
             : "bg-transparent"
         }`}
       >
-        {showAnnouncement && (
-          <div className="bg-primary text-primary-foreground">
-            <p className="container mx-auto px-4 lg:px-8 py-2 text-center text-xs sm:text-sm font-medium tracking-wide leading-snug">
-              {tAnnouncement("text")}
-            </p>
-          </div>
-        )}
         <nav className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link href="/" className="flex items-center gap-2">
@@ -187,9 +177,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className={`fixed inset-0 z-40 bg-background/98 backdrop-blur-lg md:hidden ${
-              showAnnouncement ? "pt-36" : "pt-24"
-            }`}
+            className="fixed inset-0 z-40 bg-background/98 backdrop-blur-lg pt-24 md:hidden"
           >
             <nav className="container mx-auto px-4">
               <div className="flex flex-col gap-6">

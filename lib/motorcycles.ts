@@ -395,7 +395,7 @@ WhatsApp: +1 5144154612`,
     km: 37456,
     engineSizeCc: 1800,
     condition: `Like New`,
-    status: `In Stock`,
+    status: `Out Of Stock`,
     brand: `Suzuki`,
     description: ``,
     image: `/motorcycles/suzuki-boulevard-m109r-2/01.jpg`,
@@ -939,7 +939,7 @@ WhatsApp: +1 5144154612`,
     km: 15591,
     engineSizeCc: 1800,
     condition: `Like New`,
-    status: `In Stock`,
+    status: `Out Of Stock`,
     brand: `Suzuki`,
     description: ``,
     image: `/motorcycles/suzuki-boulevard-m109r-6/01.jpeg`,
@@ -956,7 +956,7 @@ WhatsApp: +1 5144154612`,
     km: 19852,
     engineSizeCc: 1800,
     condition: `Like New`,
-    status: `In Stock`,
+    status: `Out Of Stock`,
     brand: `Suzuki`,
     description: ``,
     image: `/motorcycles/suzuki-boulevard-m109r-7/01.jpeg`,
@@ -1011,9 +1011,6 @@ const PRICE_BUCKETS = [
   { value: "8000-10000", min: 8000, max: 10000 },
   { value: "10000+", min: 10000, max: Infinity },
 ] as const
-export const priceRangeValues = PRICE_BUCKETS.filter(({ min, max }) =>
-  motorcycles.some((m) => m.price >= min && m.price < max)
-).map((b) => b.value)
 
 const KM_BUCKETS = [
   { value: "0-20000", min: 0, max: 20000 },
@@ -1021,6 +1018,53 @@ const KM_BUCKETS = [
   { value: "35000-50000", min: 35000, max: 50000 },
   { value: "50000+", min: 50000, max: Infinity },
 ] as const
+
+const OLDER_YEAR_CUTOFF = 2007
+
+export type FilterOptions = {
+  brands: string[]
+  conditions: string[]
+  engineSizes: number[]
+  years: number[]
+  hasOlder: boolean
+  priceRangeValues: string[]
+  kmRangeValues: string[]
+}
+
+export function buildFilterOptions(inventory: Motorcycle[]): FilterOptions {
+  const brands = [...new Set(inventory.map((m) => m.make))].sort()
+  const conditions = [...new Set(inventory.map((m) => m.condition).filter(Boolean))].sort()
+  const engineSizes = [...new Set(inventory.map((m) => m.engineSizeCc).filter(Boolean))].sort(
+    (a, b) => a - b
+  )
+  const years = [...new Set(inventory.map((m) => m.year))].sort((a, b) => b - a)
+  const hasOlder = inventory.some((m) => m.year <= OLDER_YEAR_CUTOFF)
+  const priceRangeValues = PRICE_BUCKETS.filter(({ min, max }) =>
+    inventory.some((m) => m.price >= min && m.price < max)
+  ).map((b) => b.value)
+  const kmRangeValues = KM_BUCKETS.filter(({ min, max }) =>
+    inventory.some((m) => m.km >= min && m.km < max)
+  ).map((b) => b.value)
+
+  return {
+    brands,
+    conditions,
+    engineSizes,
+    years,
+    hasOlder,
+    priceRangeValues,
+    kmRangeValues,
+  }
+}
+
+export const inStockFilterOptions = buildFilterOptions(
+  motorcycles.filter((m) => m.status === "In Stock")
+)
+
+export const priceRangeValues = PRICE_BUCKETS.filter(({ min, max }) =>
+  motorcycles.some((m) => m.price >= min && m.price < max)
+).map((b) => b.value)
+
 export const kmRangeValues = KM_BUCKETS.filter(({ min, max }) =>
   motorcycles.some((m) => m.km >= min && m.km < max)
 ).map((b) => b.value)

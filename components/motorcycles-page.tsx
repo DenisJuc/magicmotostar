@@ -25,13 +25,9 @@ import { Footer } from "@/components/footer"
 import { BikeCard } from "@/components/bike-card"
 import {
   motorcycles,
-  brands,
-  conditions,
-  engineSizes,
+  inStockFilterOptions,
   statuses,
-  years,
-  priceRangeValues,
-  kmRangeValues,
+  type FilterOptions,
 } from "@/lib/motorcycles"
 
 interface Filters {
@@ -67,26 +63,32 @@ const KM_RANGE_LABEL_KEYS: Record<string, string> = {
   "50000+": "km50plus",
 }
 
-function filterOptionArrays(t: (k: string) => string) {
-  const yearOptions = years.map((y) => ({ value: String(y), label: String(y) }))
+function filterOptionArrays(t: (k: string) => string, filterOptions: FilterOptions) {
+  const yearOptions = filterOptions.years.map((y) => ({ value: String(y), label: String(y) }))
   return {
     priceRanges: [
       { value: "all", label: t("allPrices") },
-      ...priceRangeValues.map((v) => ({ value: v, label: t(PRICE_RANGE_LABEL_KEYS[v] ?? v) })),
+      ...filterOptions.priceRangeValues.map((v) => ({ value: v, label: t(PRICE_RANGE_LABEL_KEYS[v] ?? v) })),
     ],
     kmRanges: [
       { value: "all", label: t("allMileage") },
-      ...kmRangeValues.map((v) => ({ value: v, label: t(KM_RANGE_LABEL_KEYS[v] ?? v) })),
+      ...filterOptions.kmRangeValues.map((v) => ({ value: v, label: t(KM_RANGE_LABEL_KEYS[v] ?? v) })),
     ],
     yearRanges: [
       { value: "all", label: t("allYears") },
       ...yearOptions,
-      { value: "older", label: t("older") },
+      ...(filterOptions.hasOlder ? [{ value: "older", label: t("older") }] : []),
     ],
-    engineSizeOptions: [{ value: "all", label: t("allSizes") }, ...engineSizes.map((cc) => ({ value: String(cc), label: `${cc}cc` }))],
+    engineSizeOptions: [
+      { value: "all", label: t("allSizes") },
+      ...filterOptions.engineSizes.map((cc) => ({ value: String(cc), label: `${cc}cc` })),
+    ],
     statusOptions: [{ value: "all", label: t("allStatus") }, ...statuses.map((s) => ({ value: s, label: s }))],
-    brandOptions: [{ value: "all", label: t("allBrands") }, ...brands.map((b) => ({ value: b, label: b }))],
-    conditionOptions: [{ value: "all", label: t("allConditions") }, ...conditions.map((c) => ({ value: c, label: c }))],
+    brandOptions: [{ value: "all", label: t("allBrands") }, ...filterOptions.brands.map((b) => ({ value: b, label: b }))],
+    conditionOptions: [
+      { value: "all", label: t("allConditions") },
+      ...filterOptions.conditions.map((c) => ({ value: c, label: c })),
+    ],
   }
 }
 
@@ -237,7 +239,7 @@ export function MotorcyclesPage() {
   const t = useTranslations("motorcycles")
   const [filters, setFilters] = useState<Filters>(defaultFilters)
 
-  const options = useMemo(() => filterOptionArrays(t), [t])
+  const options = useMemo(() => filterOptionArrays(t, inStockFilterOptions), [t])
   const labels = useMemo(
     () => ({
       filters: t("filters"),
@@ -326,7 +328,7 @@ export function MotorcyclesPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-40 pb-12 bg-card border-b border-border">
+      <section className="pt-32 pb-12 bg-card border-b border-border">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
