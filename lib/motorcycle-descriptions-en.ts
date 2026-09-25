@@ -33,4 +33,8 @@ export const motorcycleDescriptionEn: Record<string, string> = {
     "Yamaha Stryker. Second unit available. Same great styling and reliability. Sold with customs paid.",
   "yamaha-xvs-raider":
     "Superb Raider for sale, recently imported from Canada. Hand-picked 1900 CC engine, very nice and well accessorized. Includes original front fender and rider seat. Sold with customs paid; we can arrange RAR at extra cost. No installments or trades.",
+  "honda-vt-stateline":
+    "ABS included.",
+  "suzuki-boulevard-m109r-boss":
+    "Suzuki Boulevard M109R BOSS — a cruiser with a distinctive character, very well maintained. Year: 2016, with only 18,709 km. You can reserve it — if you hurry; there are very few like it on the market. Sold with customs paid and all documents needed for registration.\n\nInfo: WhatsApp +1 514 415 4612",
 }
