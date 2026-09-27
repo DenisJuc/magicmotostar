@@ -37,4 +37,6 @@ export const motorcycleDescriptionEn: Record<string, string> = {
     "ABS included.",
   "suzuki-boulevard-m109r-boss":
     "Suzuki Boulevard M109R BOSS — a cruiser with a distinctive character, very well maintained. Year: 2016, with only 18,709 km. You can reserve it — if you hurry; there are very few like it on the market. Sold with customs paid and all documents needed for registration.\n\nInfo: WhatsApp +1 514 415 4612",
+  "suzuki-boulevard-c90t-3":
+    "In impeccable condition: new tires, saddlebags in perfect shape, brakes replaced, 2 keys. Ready to ride.",
 }
