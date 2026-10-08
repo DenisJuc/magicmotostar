@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { MotorcycleDetail } from "@/components/motorcycle-detail"
-import { getMotorcycleBySlug, motorcycles } from "@/lib/motorcycles"
+import { getModelName, getMotorcycleBySlug, motorcycles } from "@/lib/motorcycles"
 import { routing } from "@/i18n/routing"
 
 export function generateStaticParams() {
@@ -16,13 +16,14 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>
 }) {
-  const { slug } = await params
+  const { locale, slug } = await params
   const bike = getMotorcycleBySlug(slug)
   if (!bike) return {}
+  const model = getModelName(bike, locale)
 
   return {
-    title: `${bike.year} ${bike.make} ${bike.model} | Magic Moto`,
-    description: `View details, photos, and specs for the ${bike.year} ${bike.make} ${bike.model}.`,
+    title: `${bike.year} ${bike.make} ${model} | Magic Moto`,
+    description: `View details, photos, and specs for the ${bike.year} ${bike.make} ${model}.`,
   }
 }
 

@@ -5,9 +5,9 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Gauge, Calendar } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
-import type { Motorcycle } from "@/lib/motorcycles"
+import { getModelName, type Motorcycle } from "@/lib/motorcycles"
 
 interface BikeCardProps {
   bike: Motorcycle
@@ -16,6 +16,7 @@ interface BikeCardProps {
 
 export function BikeCard({ bike, index = 0 }: BikeCardProps) {
   const t = useTranslations("motorcycles")
+  const model = getModelName(bike, useLocale())
   const ref = useRef<HTMLDivElement>(null)
   const [showInstantly, setShowInstantly] = useState(false)
 
@@ -45,7 +46,7 @@ export function BikeCard({ bike, index = 0 }: BikeCardProps) {
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={bike.image}
-            alt={`${bike.year} ${bike.make} ${bike.model}`}
+            alt={`${bike.year} ${bike.make} ${model}`}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
@@ -63,7 +64,7 @@ export function BikeCard({ bike, index = 0 }: BikeCardProps) {
         <div className="p-5">
           {/* Title */}
           <h3 className="font-bold text-lg font-[family-name:var(--font-oswald)] uppercase tracking-wide mb-2">
-            {bike.make} {bike.model}
+            {bike.make} {model}
           </h3>
 
           {/* Specs */}

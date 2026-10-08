@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { useLocale, useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
 import type { Motorcycle } from "@/lib/motorcycles"
-import { getRelatedMotorcycles } from "@/lib/motorcycles"
+import { getModelName, getRelatedMotorcycles } from "@/lib/motorcycles"
 import { motorcycleDescriptionEn } from "@/lib/motorcycle-descriptions-en"
 import { BikeCard } from "@/components/bike-card"
 
@@ -43,6 +43,7 @@ export function MotorcycleDetail({ bike }: { bike: Motorcycle }) {
   const locale = useLocale()
   const t = useTranslations("detail")
   const tStats = useTranslations("detailStats")
+  const model = getModelName(bike, locale)
   const [activeImage, setActiveImage] = useState(bike.galleryImages[0] ?? bike.image)
 
   const related = useMemo(
@@ -74,7 +75,7 @@ export function MotorcycleDetail({ bike }: { bike: Motorcycle }) {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-border bg-card">
               <Image
                 src={activeImage}
-                alt={`${bike.year} ${bike.make} ${bike.model}`}
+                alt={`${bike.year} ${bike.make} ${model}`}
                 fill
                 className="object-cover"
                 priority
@@ -115,7 +116,7 @@ export function MotorcycleDetail({ bike }: { bike: Motorcycle }) {
                 {bike.make}
               </p>
               <h1 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-oswald)] uppercase leading-tight">
-                {bike.model}
+                {model}
               </h1>
 
               <div className="mt-5 flex items-end gap-4 flex-wrap">
