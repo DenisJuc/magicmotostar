@@ -10,6 +10,7 @@ import { Link } from "@/i18n/navigation"
 import type { Motorcycle } from "@/lib/motorcycles"
 import { getModelName, getRelatedMotorcycles } from "@/lib/motorcycles"
 import { motorcycleDescriptionEn } from "@/lib/motorcycle-descriptions-en"
+import { motorcycleDescriptionFr } from "@/lib/motorcycle-descriptions-fr"
 import { BikeCard } from "@/components/bike-card"
 
 function cleanDescription(raw: string) {
@@ -53,8 +54,9 @@ export function MotorcycleDetail({ bike }: { bike: Motorcycle }) {
 
   const description = useMemo(() => {
     if (locale === "ro") return cleanDescription(bike.description)
+    const frText = locale === "fr" ? motorcycleDescriptionFr[bike.slug] : undefined
     const enText = motorcycleDescriptionEn[bike.slug]
-    return enText ?? cleanDescription(bike.description)
+    return frText ?? enText ?? cleanDescription(bike.description)
   }, [locale, bike.slug, bike.description])
 
   return (
@@ -157,7 +159,6 @@ export function MotorcycleDetail({ bike }: { bike: Motorcycle }) {
                       <StatRow label={tStats("km")} value={`${bike.km.toLocaleString()} km`} />
                       <StatRow label={tStats("year")} value={bike.year || "—"} />
                       <StatRow label={tStats("engineSize")} value={bike.engineSizeCc ? `${bike.engineSizeCc}cc` : "—"} />
-                      <StatRow label={tStats("condition")} value={bike.condition || "—"} />
                       <StatRow label={tStats("status")} value={bike.status || "—"} />
                       <StatRow label={tStats("brand")} value={bike.brand || bike.make} />
                     </tbody>

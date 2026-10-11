@@ -6,7 +6,7 @@ import { useEffect } from "react"
 export function LocaleLang() {
   const locale = useLocale()
   useEffect(() => {
-    document.documentElement.lang = locale === "ro" ? "ro" : "en"
+    document.documentElement.lang = locale
   }, [locale])
   return null
 }

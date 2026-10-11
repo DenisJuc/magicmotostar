@@ -18,6 +18,12 @@ const navLinks = [
   { href: "/contact" as const, key: "contact" as const },
 ] as const
 
+const languages = [
+  { code: "en", label: "English" },
+  { code: "ro", label: "Română" },
+  { code: "fr", label: "Français" },
+] as const
+
 function persistLocale(locale: string) {
   if (typeof window === "undefined") return
   try {
@@ -95,34 +101,23 @@ export function Navbar() {
 
               {/* Language toggle */}
               <div className="flex items-center gap-1 ml-2 border-l border-border pl-4">
-                <Link
-                  href={pathname}
-                  locale="en"
-                  onClick={() => persistLocale("en")}
-                  className={`flex items-center justify-center w-9 h-9 rounded-md text-sm font-semibold transition-colors ${
-                    locale === "en"
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted/50 text-muted-foreground hover:bg-muted"
-                  }`}
-                  aria-label="English"
-                  title="English"
-                >
-                  EN
-                </Link>
-                <Link
-                  href={pathname}
-                  locale="ro"
-                  onClick={() => persistLocale("ro")}
-                  className={`flex items-center justify-center w-9 h-9 rounded-md text-sm font-semibold transition-colors ${
-                    locale === "ro"
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted/50 text-muted-foreground hover:bg-muted"
-                  }`}
-                  aria-label="Română"
-                  title="Română"
-                >
-                  RO
-                </Link>
+                {languages.map((lang) => (
+                  <Link
+                    key={lang.code}
+                    href={pathname}
+                    locale={lang.code}
+                    onClick={() => persistLocale(lang.code)}
+                    className={`flex items-center justify-center w-9 h-9 rounded-md text-sm font-semibold transition-colors ${
+                      locale === lang.code
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted/50 text-muted-foreground hover:bg-muted"
+                    }`}
+                    aria-label={lang.label}
+                    title={lang.label}
+                  >
+                    {lang.code.toUpperCase()}
+                  </Link>
+                ))}
               </div>
 
               <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
@@ -132,26 +127,20 @@ export function Navbar() {
 
             <div className="flex items-center gap-2 md:hidden">
               <div className="flex items-center gap-1">
-                <Link
-                  href={pathname}
-                  locale="en"
-                  onClick={() => persistLocale("en")}
-                  className={`w-8 h-8 rounded text-xs font-semibold flex items-center justify-center ${
-                    locale === "en" ? "bg-primary text-primary-foreground" : "bg-muted/50"
-                  }`}
-                >
-                  EN
-                </Link>
-                <Link
-                  href={pathname}
-                  locale="ro"
-                  onClick={() => persistLocale("ro")}
-                  className={`w-8 h-8 rounded text-xs font-semibold flex items-center justify-center ${
-                    locale === "ro" ? "bg-primary text-primary-foreground" : "bg-muted/50"
-                  }`}
-                >
-                  RO
-                </Link>
+                {languages.map((lang) => (
+                  <Link
+                    key={lang.code}
+                    href={pathname}
+                    locale={lang.code}
+                    onClick={() => persistLocale(lang.code)}
+                    className={`w-8 h-8 rounded text-xs font-semibold flex items-center justify-center ${
+                      locale === lang.code ? "bg-primary text-primary-foreground" : "bg-muted/50"
+                    }`}
+                    aria-label={lang.label}
+                  >
+                    {lang.code.toUpperCase()}
+                  </Link>
+                ))}
               </div>
               <Button
                 variant="ghost"

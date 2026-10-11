@@ -17,13 +17,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  const lang = locale === "ro" ? "ro" : "en"
+  const descriptions: Record<string, string> = {
+    en: "Premium motorcycle dealership. Browse our curated selection. Trust your ride with Magic Moto.",
+    ro: "Dealer motociclete premium. Vezi selecția noastră. Încrede-te în mers.",
+    fr: "Concessionnaire de motos haut de gamme. Parcourez notre sélection. Trust your ride avec Magic Moto.",
+  }
   return {
     title: "Magic Moto | Trust Your Ride",
-    description:
-      locale === "ro"
-        ? "Dealer motociclete premium. Vezi selecția noastră. Încrede-te în mers."
-        : "Premium motorcycle dealership. Browse our curated selection. Trust your ride with Magic Moto.",
+    description: descriptions[locale] ?? descriptions.en,
     keywords: [
       "motorcycles",
       "motorcycle dealer",

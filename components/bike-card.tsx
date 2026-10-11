@@ -29,13 +29,6 @@ export function BikeCard({ bike, index = 0 }: BikeCardProps) {
     }
   }, [])
 
-  const conditionColors: Record<string, string> = {
-    New: "bg-primary/20 text-primary border-primary/30",
-    Used: "bg-secondary/20 text-secondary border-secondary/30",
-    "Like New": "bg-primary/20 text-primary border-primary/30",
-    "Certified Pre-Owned": "bg-primary/20 text-primary border-primary/30",
-  }
-
   const cardContent = (
     <>
       <Link
@@ -52,12 +45,11 @@ export function BikeCard({ bike, index = 0 }: BikeCardProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
 
-          {/* Condition Badge */}
-          <Badge
-            className={`absolute top-4 left-4 ${conditionColors[bike.condition]} border`}
-          >
-            {bike.condition}
-          </Badge>
+          {bike.isNew && (
+            <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground border-0 uppercase tracking-wider font-bold shadow-lg shadow-black/40">
+              {t("newBadge")}
+            </Badge>
+          )}
         </div>
 
         {/* Content */}

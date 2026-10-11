@@ -6,8 +6,11 @@ export type Motorcycle = {
   slug: string
   make: string
   model: string
-  /** Romanian model name, only when it differs from `model` (e.g. contains translated words). */
+  /** Romanian/French model names, only when they differ from `model` (e.g. contain translated words). */
   modelRo?: string
+  modelFr?: string
+  /** Shows a "New" badge on the listing card. */
+  isNew?: boolean
   year: number
   price: number
   km: number
@@ -1193,6 +1196,7 @@ Info: WhatsApp +1 514 415 4612`,
     slug: `yamaha-xv-95-2`,
     make: `Yamaha`,
     model: `XV950`,
+    isNew: true,
     year: 2012,
     price: 5650,
     km: 34942,
@@ -1210,6 +1214,7 @@ Info: WhatsApp +1 514 415 4612`,
     slug: `suzuki-boulevard-m50-4`,
     make: `Suzuki`,
     model: `Boulevard M50`,
+    isNew: true,
     year: 2016,
     price: 6450,
     km: 30367,
@@ -1227,6 +1232,7 @@ Info: WhatsApp +1 514 415 4612`,
     slug: `honda-vt-stateline-2`,
     make: `Honda`,
     model: `VT Stateline ABS`,
+    isNew: true,
     year: 2012,
     price: 7250,
     km: 39356,
@@ -1245,6 +1251,8 @@ Info: WhatsApp +1 514 415 4612`,
     make: `Kawasaki`,
     model: `Vulcan Vaquero ABS – Cobra Exhaust`,
     modelRo: `Vulcan Vaquero ABS – Tobe Cobra`,
+    modelFr: `Vulcan Vaquero ABS – Échappement Cobra`,
+    isNew: true,
     year: 2019,
     price: 10750,
     km: 68300,
@@ -1262,6 +1270,7 @@ Info: WhatsApp +1 514 415 4612`,
     slug: `kawasaki-vulcan-s-650`,
     make: `Kawasaki`,
     model: `Vulcan S 650 ABS`,
+    isNew: true,
     year: 2016,
     price: 4900,
     km: 43785,
@@ -1279,6 +1288,7 @@ Info: WhatsApp +1 514 415 4612`,
     slug: `honda-ctx700`,
     make: `Honda`,
     model: `CTX700 ABS`,
+    isNew: true,
     year: 2016,
     price: 5850,
     km: 44519,
@@ -1298,7 +1308,9 @@ export function getMotorcycleBySlug(slug: string) {
 }
 
 export function getModelName(bike: Motorcycle, locale: string) {
-  return locale === "ro" && bike.modelRo ? bike.modelRo : bike.model
+  if (locale === "ro" && bike.modelRo) return bike.modelRo
+  if (locale === "fr" && bike.modelFr) return bike.modelFr
+  return bike.model
 }
 
 export function getRelatedMotorcycles(brand: string, slug: string, max = 3) {

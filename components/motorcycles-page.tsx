@@ -35,7 +35,6 @@ interface Filters {
   kmRange: string
   yearRange: string
   brand: string
-  condition: string
   engineSize: string
   status: string
 }
@@ -45,7 +44,6 @@ const defaultFilters: Filters = {
   kmRange: "all",
   yearRange: "all",
   brand: "all",
-  condition: "all",
   engineSize: "all",
   status: "In Stock",
 }
@@ -85,10 +83,6 @@ function filterOptionArrays(t: (k: string) => string, filterOptions: FilterOptio
     ],
     statusOptions: [{ value: "all", label: t("allStatus") }, ...statuses.map((s) => ({ value: s, label: s }))],
     brandOptions: [{ value: "all", label: t("allBrands") }, ...filterOptions.brands.map((b) => ({ value: b, label: b }))],
-    conditionOptions: [
-      { value: "all", label: t("allConditions") },
-      ...filterOptions.conditions.map((c) => ({ value: c, label: c })),
-    ],
   }
 }
 
@@ -137,7 +131,7 @@ function FilterBar({
   activeFiltersCount: number
   onClearFilters: () => void
   options: ReturnType<typeof filterOptionArrays>
-  labels: { filters: string; clearAll: string; price: string; mileage: string; year: string; brand: string; condition: string; engineSize: string; status: string }
+  labels: { filters: string; clearAll: string; price: string; mileage: string; year: string; brand: string; engineSize: string; status: string }
 }) {
   return (
     <div className="hidden lg:block bg-card border border-border rounded-xl p-6 mb-8">
@@ -152,12 +146,11 @@ function FilterBar({
           </Button>
         )}
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
         <FilterSelect label={labels.price} value={filters.priceRange} onValueChange={(v) => setFilters({ ...filters, priceRange: v })} options={options.priceRanges} />
         <FilterSelect label={labels.mileage} value={filters.kmRange} onValueChange={(v) => setFilters({ ...filters, kmRange: v })} options={options.kmRanges} />
         <FilterSelect label={labels.year} value={filters.yearRange} onValueChange={(v) => setFilters({ ...filters, yearRange: v })} options={options.yearRanges} />
         <FilterSelect label={labels.brand} value={filters.brand} onValueChange={(v) => setFilters({ ...filters, brand: v })} options={options.brandOptions} />
-        <FilterSelect label={labels.condition} value={filters.condition} onValueChange={(v) => setFilters({ ...filters, condition: v })} options={options.conditionOptions} />
         <FilterSelect label={labels.engineSize} value={filters.engineSize} onValueChange={(v) => setFilters({ ...filters, engineSize: v })} options={options.engineSizeOptions} />
         <FilterSelect label={labels.status} value={filters.status} onValueChange={(v) => setFilters({ ...filters, status: v })} options={options.statusOptions} />
       </div>
@@ -179,7 +172,7 @@ function MobileFilterDrawer({
   activeFiltersCount: number
   onClearFilters: () => void
   options: ReturnType<typeof filterOptionArrays>
-  labels: { filters: string; clearAll: string; price: string; mileage: string; year: string; brand: string; condition: string; engineSize: string; status: string; active: string }
+  labels: { filters: string; clearAll: string; price: string; mileage: string; year: string; brand: string; engineSize: string; status: string; active: string }
   showResults: string
 }) {
   const [open, setOpen] = useState(false)
@@ -216,7 +209,6 @@ function MobileFilterDrawer({
           <FilterSelect label={labels.mileage} value={filters.kmRange} onValueChange={(v) => setFilters({ ...filters, kmRange: v })} options={options.kmRanges} />
           <FilterSelect label={labels.year} value={filters.yearRange} onValueChange={(v) => setFilters({ ...filters, yearRange: v })} options={options.yearRanges} />
           <FilterSelect label={labels.brand} value={filters.brand} onValueChange={(v) => setFilters({ ...filters, brand: v })} options={options.brandOptions} />
-          <FilterSelect label={labels.condition} value={filters.condition} onValueChange={(v) => setFilters({ ...filters, condition: v })} options={options.conditionOptions} />
           <FilterSelect label={labels.engineSize} value={filters.engineSize} onValueChange={(v) => setFilters({ ...filters, engineSize: v })} options={options.engineSizeOptions} />
           <FilterSelect label={labels.status} value={filters.status} onValueChange={(v) => setFilters({ ...filters, status: v })} options={options.statusOptions} />
         </div>
@@ -248,7 +240,6 @@ export function MotorcyclesPage() {
       mileage: t("mileage"),
       year: t("year"),
       brand: t("brand"),
-      condition: t("condition"),
       engineSize: t("engineSize"),
       status: t("status"),
       active: t("active"),
@@ -296,11 +287,6 @@ export function MotorcyclesPage() {
 
       // Brand filter
       if (filters.brand !== "all" && bike.make !== filters.brand) {
-        return false
-      }
-
-      // Condition filter
-      if (filters.condition !== "all" && bike.condition !== filters.condition) {
         return false
       }
 
