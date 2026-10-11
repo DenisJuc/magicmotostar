@@ -264,7 +264,7 @@ export function MotorcyclesPage() {
   }, [filters])
 
   const filteredBikes = useMemo(() => {
-    return motorcycles.filter((bike) => {
+    const matches = motorcycles.filter((bike) => {
       // Price filter (€)
       if (filters.priceRange !== "all") {
         if (filters.priceRange === "10000+") {
@@ -319,6 +319,12 @@ export function MotorcyclesPage() {
 
       return true
     })
+
+    const inStockFirst = (bike: (typeof motorcycles)[number]) =>
+      bike.status === "In Stock" ? 0 : 1
+    return matches.sort(
+      (a, b) => inStockFirst(a) - inStockFirst(b) || b.price - a.price
+    )
   }, [filters])
 
   const clearFilters = () => setFilters(defaultFilters)
