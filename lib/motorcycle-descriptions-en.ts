@@ -39,4 +39,12 @@ export const motorcycleDescriptionEn: Record<string, string> = {
     "Suzuki Boulevard M109R BOSS — a cruiser with a distinctive character, very well maintained. Year: 2016, with only 18,709 km. You can reserve it — if you hurry; there are very few like it on the market. Sold with customs paid and all documents needed for registration.\n\nInfo: WhatsApp +1 514 415 4612",
   "suzuki-boulevard-c90t-3":
     "In impeccable condition: new tires, saddlebags in perfect shape, brakes replaced, 2 keys. Ready to ride.",
+  "suzuki-boulevard-m109r-boss-2":
+    "Corbin seats, crash bar, windshield, solo seat, hard saddlebags, sissy bar, upgraded pegs. A truly superb bike.",
+  "harley-davidson-fat-boy":
+    "Sold with two keys. Very lightly used, with its original rear fender and very low mileage. Mechanically and cosmetically impeccable, except for a metal rear fender bought in the US by the previous owner, which needs to be painted.",
+  "suzuki-boulevard-m109r-10":
+    "Showroom condition: new tires, forks serviced, two keys. Ready for the season.",
+  "suzuki-boulevard-c50t-2":
+    "Showroom condition: inspection done, new tires, fresh oil change, two keys. Ready for the season and impeccable.",
 }
