@@ -47,4 +47,6 @@ export const motorcycleDescriptionEn: Record<string, string> = {
     "Showroom condition: new tires, forks serviced, two keys. Ready for the season.",
   "suzuki-boulevard-c50t-2":
     "Showroom condition: inspection done, new tires, fresh oil change, two keys. Ready for the season and impeccable.",
+  "kawasaki-vulcan-vaquero-4":
+    "Sold with customs paid. Arrives in Romania in approximately 60 days.",
 }

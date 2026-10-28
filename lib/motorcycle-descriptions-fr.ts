@@ -47,4 +47,6 @@ export const motorcycleDescriptionFr: Record<string, string> = {
     "État salle d'exposition : pneus neufs, fourche révisée, deux clés. Prête pour la saison.",
   "suzuki-boulevard-c50t-2":
     "État salle d'exposition : inspection faite, pneus neufs, vidange d'huile, deux clés. Prête pour la saison, impeccable.",
+  "kawasaki-vulcan-vaquero-4":
+    "Vendue avec les droits de douane payés. Arrive en Roumanie dans environ 60 jours.",
 }
